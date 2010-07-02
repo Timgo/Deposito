@@ -31162,3 +31162,136 @@ Migrating to CreateTipoDePagamento (20100702213951)
   [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702221453)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "tipo_de_pagamentos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "exibido" text, "registro" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100702221453')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pedido_items")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pedidos")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("produtos")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tipo_de_pagamentos")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702221453)
+Migrating to AddTipoDePagamentoData (20100702221645)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702221453)
+Migrating to AddTipoDePagamentoData (20100702221645)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702221453)
+Migrating to AddTipoDePagamentoData (20100702221645)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702221453)
+Migrating to AddTipoDePagamentoData (20100702221645)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702221453)
+Migrating to AddTipoDePagamentoData (20100702221645)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mTipoDePagamento Create (0.6ms)[0m   [0mINSERT INTO "tipo_de_pagamentos" ("exibido", "created_at", "updated_at", "registro") VALUES('Depósito Bancário', '2010-07-02 22:33:21', '2010-07-02 22:33:21', 'banco')[0m
+  [4;36;1mTipoDePagamento Create (0.1ms)[0m   [0;1mINSERT INTO "tipo_de_pagamentos" ("exibido", "created_at", "updated_at", "registro") VALUES('Boleto Bancário', '2010-07-02 22:33:21', '2010-07-02 22:33:21', 'boleto')[0m
+  [4;35;1mTipoDePagamento Create (0.1ms)[0m   [0mINSERT INTO "tipo_de_pagamentos" ("exibido", "created_at", "updated_at", "registro") VALUES('PagSeguro', '2010-07-02 22:33:21', '2010-07-02 22:33:21', 'pagseguro')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100702221645')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pedido_items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pedidos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("produtos")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tipo_de_pagamentos")[0m
