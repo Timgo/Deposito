@@ -31032,3 +31032,133 @@ Rendering template within layouts/loja
 Rendering loja/index
 Rendered loja/_lista (3.3ms)
 Completed in 70ms (View: 61, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-02 16:46:50) [GET]
+  [4;36;1mProduto Load (21.6ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (19.7ms)
+Completed in 355ms (View: 212, DB: 22) | 200 OK [http://localhost/loja]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702200723)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702200723)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702200723)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamento (20100702213951)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamento (20100702213951)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (16.6ms)[0m   [0mCREATE TABLE "tipo_de_pagamento" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "exibido" varchar(255), "registro" varchar(255)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100702213951')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pedido_items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pedidos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("produtos")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tipo_de_pagamento")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTipoDePagamento (20100702213951)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDROP TABLE "tipo_de_pagamento"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100702213951'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pedido_items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pedidos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("produtos")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m

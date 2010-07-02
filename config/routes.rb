@@ -1,6 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :tipo_de_pagamentos
-
   map.resources :item_pedidos
 
   map.resources :pedidos
