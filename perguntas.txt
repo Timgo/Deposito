@@ -8,4 +8,4 @@ como funciona o método "each"? por que tem um "do"? por que esses "|xxxx|"? Ex.
 
 por que eu preciso criar a ligação "has many" ou "belongs to"? qual é o benefício? qual o prejuízo se eu não fizer?
 
-teste do git.
+teste do
