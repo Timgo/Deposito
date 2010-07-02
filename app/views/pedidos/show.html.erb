@@ -1,0 +1,23 @@
+<p>
+  <b>Nome:</b>
+  <%=h @pedido.nome %>
+</p>
+
+<p>
+  <b>Endereço:</b>
+  <%=h @pedido.endereço %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @pedido.email %>
+</p>
+
+<p>
+  <b>Tipo de pagamento:</b>
+  <%=h @pedido.tipo_de_pagamento %>
+</p>
+
+
+<%= link_to 'Edit', edit_pedido_path(@pedido) %> |
+<%= link_to 'Back', pedidos_path %>

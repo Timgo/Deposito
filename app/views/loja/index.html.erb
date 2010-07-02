@@ -1,0 +1,18 @@
+<h1>Seu catálogo Pragmatic</h1>
+<% for produto in @produtos -%>
+ <div class="entry">
+	<% form_remote_tag :url => { :action => 'adicionar_a_lista', :id => produto } do %>
+	<%= image_submit_tag(produto.image_url) %>
+	<% end %>
+	<h3><%=h produto.title %></h3>
+	<%= produto.description %>
+	
+ <div class="price-line">
+	<span class="price"><%= number_to_currency(produto.price, :unit => 'R$', :separator => ",", :delimiter => ".") %></span>
+	<% form_remote_tag :url => { :action => 'adicionar_a_lista', :id => produto } do %>
+		<%= submit_tag "Adicionar à lista de compras" %>
+	<% end %>
+
+</div>
+</div>
+<% end %>

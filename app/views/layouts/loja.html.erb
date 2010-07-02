@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html> 
+<head>
+<title>Loja Online de Livros Pragprog Books</title>
+<%= stylesheet_link_tag "deposito", :media => "all" %>
+<%= javascript_include_tag :defaults %>
+</head> 
+<body id="loja">
+
+<div id="banner">
+<%= image_tag("logo.png") %>
+<%= @page_title || "Loja de livros Pragmatic" %>
+</div> 
+
+<div id="columns">	
+ <div id="side"> 
+	
+	<%=  Time.now.to_s(:short) %><br/>
+	
+	<% esconder_div_if(@lista.items.empty?, :id => "lista") do %>
+		<%= render(:partial => "lista", :object => @lista) %>
+	<% end %>
+	
+	
+	<a href="http://www....">Home</a><br /> 
+	<a href="http://www..../faq">Questions</a><br /> 
+	<a href="http://www..../news">News</a><br /> 
+	<a href="http://www..../contact">Contact</a><br />
+ </div> 
+
+<div id="main">
+	<% if flash[:notice] -%>
+	<div id="notice"><%= flash[:notice]%></div>
+	<% end -%>
+	
+	<%= yield :layout %>
+</div> 
+
+</div>
+
+</body> 
+
+</html>

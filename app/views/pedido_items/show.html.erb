@@ -1,0 +1,23 @@
+<p>
+  <b>Id produto:</b>
+  <%=h @item_pedido.id_produto %>
+</p>
+
+<p>
+  <b>Id pedido:</b>
+  <%=h @item_pedido.id_pedido %>
+</p>
+
+<p>
+  <b>Quantidade:</b>
+  <%=h @item_pedido.quantidade %>
+</p>
+
+<p>
+  <b>Preço total:</b>
+  <%=h @item_pedido.preço_total %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_pedido_path(@item_pedido) %> |
+<%= link_to 'Back', item_pedidos_path %>

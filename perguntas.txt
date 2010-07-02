@@ -1,0 +1,11 @@
+quando é que se usa uma partial e quando se usa um method?
+
+o método "for" funciona como? ex. <% for item in @cart.items %> => Executes body for each element in the result of expression
+
+não entendi quando/pq uma variável vira "plural"... ex. @item => @items; create_pedido_items.rb => pedido_item.rb
+
+como funciona o método "each"? por que tem um "do"? por que esses "|xxxx|"? Ex. lista.items.each do |item|
+
+por que eu preciso criar a ligação "has many" ou "belongs to"? qual é o benefício? qual o prejuízo se eu não fizer?
+
+teste do git.

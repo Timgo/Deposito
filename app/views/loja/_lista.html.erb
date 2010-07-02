@@ -1,0 +1,24 @@
+<h3>Sua lista de compras:</h3>
+<table>
+	<%= render(:partial => "lista_item", :collection => lista.items) %>
+	
+	<tr class="total-line">
+		<td class="coluninha">
+		<% form_remote_tag :url => { :action => 'limpar_lista'} do %>
+			<%= submit_tag "limpar tudo" %>
+		<% end %>
+		</td>
+		<td class="total-cell"><%= number_to_currency(lista.preco_total) %></td>
+	</tr>
+	<tr>
+	<td class="coluninha">
+	<%= button_to "Checkout", :action => 'checkout' if @pedido.nil? %>
+	</td>
+	<!--td>
+		<%= button_to "Checkout", :action => 'checkout' %>
+		<a href="/loja/checkout">Checkout</a>
+	</td-->
+	</tr>
+
+</table>
+

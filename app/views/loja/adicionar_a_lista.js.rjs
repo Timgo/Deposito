@@ -1,0 +1,6 @@
+page.select("div#notice").each { |div| div.hide }
+page.replace_html("lista", :partial => "lista", :object => @lista)
+page[:lista].visual_effect :blind_down if @lista.items_total == 1
+page[:item_existente].visual_effect :highlight,
+                                    :startcolor => "#88ff88",
+                                    :endcolor => "#114411"

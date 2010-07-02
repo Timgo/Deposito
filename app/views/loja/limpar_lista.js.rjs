@@ -1,0 +1,2 @@
+page[:lista].visual_effect :blind_up if @lista == nil
+#page[:main].

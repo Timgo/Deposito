@@ -1,0 +1,28 @@
+<h1>Editing item_pedido</h1>
+
+<% form_for(@item_pedido) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :id_produto %><br />
+    <%= f.text_field :id_produto %>
+  </p>
+  <p>
+    <%= f.label :id_pedido %><br />
+    <%= f.text_field :id_pedido %>
+  </p>
+  <p>
+    <%= f.label :quantidade %><br />
+    <%= f.text_field :quantidade %>
+  </p>
+  <p>
+    <%= f.label :preço_total %><br />
+    <%= f.text_field :preço_total %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @item_pedido %> |
+<%= link_to 'Back', item_pedidos_path %>

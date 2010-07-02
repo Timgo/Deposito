@@ -1,0 +1,36 @@
+<div class="deposito-form">
+
+	<%= error_messages_for 'pedido' %>
+
+	<% form_for :pedido, :url => { :action => :salvar_pedido } do |form| %>
+		<fieldset>
+			<legend>Favor inserir seus dados</legend>
+		
+			<div>
+				<%= form.label :nome, "Nome:" %>
+				<%= form.text_field :nome, :size => 40 %>
+			</div>
+			
+			<div>
+				<%= form.label :endereco, "Endereço:" %>
+				<%= form.text_area :endereco, :rows => 3, :cols => 40 %>
+			</div>
+		
+			<div>
+				<%= form.label :email, "E-mail:" %>
+				<%= form.text_field :email, :size => 40 %>
+			</div>
+		
+			<div>
+				<%= form.label :tipo_de_pagamento, "Tipo de Pagamento:" %>
+				<%= 
+					form.select :tipo_de_pagamento,
+			 					Pedido::TIPOS_DE_PAGAMENTO,
+								:prompt => "Selecione o tipo de pagamento"
+							%>
+			</div>
+			
+			<%= submit_tag "Enviar o pedido", :class => "submit" %>
+		</fieldset>
+	<% end %>
+</div>

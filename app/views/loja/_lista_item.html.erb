@@ -1,0 +1,12 @@
+<% if lista_item == @item_existente %>
+	<tr id="item_existente">
+<% else %>
+<tr>
+<% end %>
+	<td class="coluninha"><%= lista_item.quantidade %>&times; <%=h lista_item.title %></td>
+	<td>
+		<% form_remote_tag :url => { :action => 'limpar_item', :id => lista_item.produto } do %>
+		<%= submit_tag "-" %>
+		<% end %>
+	</td>
+</tr>

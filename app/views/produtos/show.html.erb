@@ -1,0 +1,25 @@
+<h1>Produto selecionado</h1>
+
+<p>
+  <b>title:</b>
+  <%=h @produto. title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @produto.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @produto.price %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%=h @produto.image_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_produto_path(@produto) %> |
+<%= link_to 'Index', produtos_path %>

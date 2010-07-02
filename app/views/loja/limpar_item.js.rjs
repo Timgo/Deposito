@@ -1,0 +1,14 @@
+#if @lista.items_total == 0
+  #page[:item_existente].visual_effect :highlight, :startcolor => "#88ff88", :endcolor => "#114411"
+ # page[:lista].visual_effect :blind_up
+  #page.replace_html("lista", :partial => "lista", :object => @lista)
+#elsif @item_existente.quantidade == 0
+ # page.replace_html("lista", :partial => "lista", :object => @lista)
+#else
+  #  page.replace_html("lista", :partial => "lista", :object => @lista)
+ #   page[:item_existente].visual_effect :highlight, :startcolor => "#88ff88", :endcolor => "#114411" 
+#end
+
+page[:lista].visual_effect :blind_up if @lista.items_total == 0
+page.replace_html("lista", :partial => "lista", :object => @lista) if @lista.items_total > 0
+page[:item_existente].visual_effect( :highlight, :startcolor => "#88ff88", :endcolor => "#114411" ) if @item_existente.quantidade > 0
