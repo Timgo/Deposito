@@ -25,7 +25,7 @@
 				<%= form.label :tipo_de_pagamento, "Tipo de Pagamento:" %>
 				<%= 
 					form.select :tipo_de_pagamento,
-			 					Pedido::TIPOS_DE_PAGAMENTO,
+			 					TipoDePagamento.find(:all).collect{|tipo|[tipo.exibido, tipo.registro]},
 								:prompt => "Selecione o tipo de pagamento"
 							%>
 			</div>

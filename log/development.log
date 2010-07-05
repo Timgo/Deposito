@@ -31295,3 +31295,286 @@ Migrating to AddTipoDePagamentoData (20100702221645)
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
   [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("tipo_de_pagamentos")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-05 15:06:00) [GET]
+
+ActionController::RoutingError (No route matches "/lojas" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-05 15:06:01) [GET]
+  [4;36;1mProduto Load (25.0ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (19.8ms)
+Completed in 345ms (View: 189, DB: 25) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#adicionar_a_lista (for 127.0.0.1 at 2010-07-05 15:42:15) [POST]
+  Parameters: {"commit"=>"Adicionar à lista de compras", "authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ=", "id"=>"6", "_"=>""}
+  [4;35;1mProduto Load (0.3ms)[0m   [0mSELECT * FROM "produtos" WHERE ("produtos"."id" = 6) [0m
+Rendering loja/adicionar_a_lista
+Rendered loja/_lista_item (103.7ms)
+Rendered loja/_lista (273.7ms)
+Completed in 519ms (View: 430, DB: 1) | 200 OK [http://localhost/loja/adicionar_a_lista/6]
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-05 15:42:17) [POST]
+  Parameters: {"authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ="}
+
+NameError (uninitialized constant Pedido::TiposDePagamento):
+  app/models/pedido.rb:11
+  app/controllers/loja_controller.rb:56:in `checkout'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-05 15:43:09) [POST]
+  Parameters: {"authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ="}
+
+NameError (uninitialized constant Pedido::TiposDePagamento):
+  app/models/pedido.rb:11
+  app/controllers/loja_controller.rb:56:in `checkout'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (100.3ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-05 15:43:11) [GET]
+  [4;36;1mProduto Load (1.0ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista_item (2.4ms)
+Rendered loja/_lista (6.0ms)
+Completed in 40ms (View: 29, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-05 15:43:12) [GET]
+  [4;35;1mProduto Load (1.0ms)[0m   [0mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista_item (2.5ms)
+Rendered loja/_lista (6.1ms)
+Completed in 102ms (View: 91, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-05 15:43:14) [POST]
+  Parameters: {"authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ="}
+
+NameError (uninitialized constant Pedido::TiposDePagamento):
+  app/models/pedido.rb:11
+  app/controllers/loja_controller.rb:56:in `checkout'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-05 15:44:07) [POST]
+  Parameters: {"authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ="}
+
+NameError (uninitialized constant Pedido::TiposDePagamento):
+  app/models/pedido.rb:11
+  app/controllers/loja_controller.rb:56:in `checkout'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-05 15:45:09) [POST]
+  Parameters: {"authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ="}
+
+NameError (uninitialized constant Pedido::TiposDePagamento):
+  app/models/pedido.rb:11
+  app/controllers/loja_controller.rb:56:in `checkout'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (97.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-05 15:46:30) [POST]
+  Parameters: {"authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ="}
+
+NameError (uninitialized constant Pedido::TiposDePagamento):
+  app/models/pedido.rb:11
+  app/controllers/loja_controller.rb:56:in `checkout'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-05 16:05:39) [POST]
+  Parameters: {"authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ="}
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `find_allmap' for #<Class:0x1025deaf0>):
+  app/models/pedido.rb:11
+  app/controllers/loja_controller.rb:56:in `checkout'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-05 16:05:57) [POST]
+  Parameters: {"authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ="}
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `find_all' for #<Class:0x101f4c070>):
+  app/models/pedido.rb:11
+  app/controllers/loja_controller.rb:56:in `checkout'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (98.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-05 16:06:34) [POST]
+  Parameters: {"authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ="}
+  [4;36;1mTipoDePagamento Load (0.4ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+Rendering template within layouts/loja
+Rendering loja/checkout
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "tipo_de_pagamentos" [0m
+Rendered loja/_lista_item (4.2ms)
+Rendered loja/_lista (52.8ms)
+Completed in 84ms (View: 66, DB: 1) | 200 OK [http://localhost/loja/checkout]
+
+
+Processing LojaController#salvar_pedido (for 127.0.0.1 at 2010-07-05 16:07:01) [POST]
+  Parameters: {"commit"=>"Enviar o pedido", "authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ=", "pedido"=>{"endereco"=>"moro no seu cora'ão", "nome"=>"querido amor", "tipo_de_pagamento"=>"", "email"=>"meu@amor.com"}}
+  [4;36;1mTipoDePagamento Load (0.4ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+Rendering template within layouts/loja
+Rendering loja/checkout
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "tipo_de_pagamentos" [0m
+Rendered loja/_lista_item (1.9ms)
+Rendered loja/_lista (5.7ms)
+Completed in 158ms (View: 20, DB: 1) | 200 OK [http://localhost/loja/salvar_pedido]
+
+
+Processing LojaController#salvar_pedido (for 127.0.0.1 at 2010-07-05 16:07:08) [POST]
+  Parameters: {"commit"=>"Enviar o pedido", "authenticity_token"=>"sc972d3z4F4zbrVmYYuInwvzBGWBHnHnM+e6RERUeXQ=", "pedido"=>{"endereco"=>"moro no seu cora'ão", "nome"=>"querido amor", "tipo_de_pagamento"=>"banco", "email"=>"meu@amor.com"}}
+  [4;36;1mTipoDePagamento Load (0.4ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mPedido Create (0.4ms)[0m   [0mINSERT INTO "pedidos" ("endereco", "created_at", "nome", "updated_at", "tipo_de_pagamento", "email") VALUES('moro no seu cora''ão', '2010-07-05 19:07:08', 'querido amor', '2010-07-05 19:07:08', 'banco', 'meu@amor.com')[0m
+  [4;36;1mPedidoItem Create (0.1ms)[0m   [0;1mINSERT INTO "pedido_items" ("id_pedido", "preco_total", "created_at", "updated_at", "quantidade", "id_produto") VALUES(2165313520, 15.0, '2010-07-05 19:07:08', '2010-07-05 19:07:08', 1, 6)[0m
+Redirected to http://localhost:3000/loja
+Completed in 32ms (DB: 2) | 302 Found [http://localhost/loja/salvar_pedido]
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-05 16:07:08) [GET]
+  [4;35;1mProduto Load (1.0ms)[0m   [0mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (3.9ms)
+Completed in 36ms (View: 28, DB: 1) | 200 OK [http://localhost/loja]
