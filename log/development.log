@@ -31720,3 +31720,487 @@ Rendering template within layouts/loja
 Rendering loja/index
 Rendered loja/_lista (3.5ms)
 Completed in 37ms (View: 28, DB: 1) | 200 OK [http://localhost/loja]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702221453)
+Migrating to AddTipoDePagamentoData (20100702221645)
+Migrating to Create_usuarios (20100712174546)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702221453)
+Migrating to AddTipoDePagamentoData (20100702221645)
+Migrating to Create_usuarios (20100712174546)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702221453)
+Migrating to AddTipoDePagamentoData (20100702221645)
+Migrating to Create_usuarios (20100712174546)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProdutos (20100329193013)
+Migrating to AddPriceToProduto (20100329201349)
+Migrating to AddTestData (20100407201727)
+Migrating to CreateSessions (20100408131401)
+Migrating to CreatePedidos (20100428180352)
+Migrating to CreatePedidoItems (20100428180537)
+Migrating to ChangeEnderecoColumn (20100517202423)
+Migrating to ChangePrecoTotalColumn (20100525193204)
+Migrating to CreateTipoDePagamentos (20100702221453)
+Migrating to AddTipoDePagamentoData (20100702221645)
+Migrating to CreateUsuarios (20100712175945)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "senha_hashed" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100712175945')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pedido_items")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("pedidos")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("produtos")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("tipo_de_pagamentos")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("usuarios")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 15:42:15) [GET]
+
+ActionController::RoutingError (No route matches "/usuario" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 15:42:21) [GET]
+
+SyntaxError (/Users/tim/Documents/Developer/deposito/app/models/usuario.rb:31: void value expression
+    return.if snh.blank?
+           ^):
+  app/controllers/usuarios_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.7ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 15:42:25) [GET]
+
+ActionController::RoutingError (No route matches "/usuario/index" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-12 15:42:29) [GET]
+  [4;36;1mProduto Load (1.3ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (4.6ms)
+Completed in 294ms (View: 169, DB: 2) | 200 OK [http://localhost/loja]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 15:42:39) [GET]
+
+SyntaxError (/Users/tim/Documents/Developer/deposito/app/models/usuario.rb:31: void value expression
+    return.if snh.blank?
+           ^):
+  app/controllers/usuarios_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (95.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 15:43:25) [GET]
+
+NameError (undefined local variable or method `nome' for #<UsuariosController:0x102407f10>):
+  app/controllers/usuarios_controller.rb:5:in `index'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 15:44:32) [GET]
+  [4;35;1mUsuario Load (0.5ms)[0m   [0mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 22ms (View: 15, DB: 1) | 200 OK [http://localhost/usuarios]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 15:57:05) [GET]
+  [4;36;1mUsuario Load (0.6ms)[0m   [0;1mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 70ms (View: 63, DB: 1) | 200 OK [http://localhost/usuarios]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 15:58:30) [GET]
+  [4;35;1mUsuario Load (0.6ms)[0m   [0mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/usuarios]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 15:58:52) [GET]
+  [4;36;1mUsuario Load (0.5ms)[0m   [0;1mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/usuarios]
+
+
+Processing UsuariosController#new (for 127.0.0.1 at 2010-07-12 15:59:02) [GET]
+Rendering template within layouts/usuarios
+Rendering usuarios/new
+Completed in 19ms (View: 12, DB: 0) | 200 OK [http://localhost/usuarios/new]
+
+
+Processing UsuariosController#create (for 127.0.0.1 at 2010-07-12 15:59:15) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"YxNaOhy0pLOHlDGUoxX+B97wdWLnSH+Ci3Fx9uwqeWA=", "usuario"=>{"nome"=>"timoteo", "confirmacao_de_senha"=>"123", "senha"=>"123"}}
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."nome" = 'timoteo') LIMIT 1[0m
+  [4;36;1mUsuario Create (0.3ms)[0m   [0;1mINSERT INTO "usuarios" ("salt", "created_at", "nome", "senha_hashed", "updated_at") VALUES('21564509600.975732093782754', '2010-07-12 18:59:15', 'timoteo', '6ac226391c056ae6799dcc09e80f45378b310af8', '2010-07-12 18:59:15')[0m
+Redirected to http://localhost:3000/usuarios
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/usuarios]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 15:59:15) [GET]
+  [4;35;1mUsuario Load (0.7ms)[0m   [0mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/usuarios]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 16:00:01) [GET]
+  [4;36;1mUsuario Load (0.7ms)[0m   [0;1mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 16ms (View: 9, DB: 2) | 200 OK [http://localhost/usuarios]
+
+
+Processing UsuariosController#show (for 127.0.0.1 at 2010-07-12 16:00:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) [0m
+Rendering template within layouts/usuarios
+Rendering usuarios/show
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/usuarios/1]
+
+
+Processing UsuariosController#show (for 127.0.0.1 at 2010-07-12 16:00:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) [0m
+Rendering template within layouts/usuarios
+Rendering usuarios/show
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/usuarios/1]
+
+
+Processing UsuariosController#show (for 127.0.0.1 at 2010-07-12 16:00:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) [0m
+Rendering template within layouts/usuarios
+Rendering usuarios/show
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/usuarios/1]
+
+
+Processing UsuariosController#edit (for 127.0.0.1 at 2010-07-12 16:00:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) [0m
+Rendering template within layouts/usuarios
+Rendering usuarios/edit
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/usuarios/1/edit]
+
+
+Processing UsuariosController#update (for 127.0.0.1 at 2010-07-12 16:00:48) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"YxNaOhy0pLOHlDGUoxX+B97wdWLnSH+Ci3Fx9uwqeWA=", "id"=>"1", "usuario"=>{"salt"=>"21564509600.975732093782754", "senha_hashed"=>"6ac226391c056ae6799dcc09e80f45378b310af8", "nome"=>"tim"}}
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) [0m
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."nome" = 'tim' AND "usuarios".id <> 1) LIMIT 1[0m
+  [4;35;1mUsuario Update (0.3ms)[0m   [0mUPDATE "usuarios" SET "updated_at" = '2010-07-12 19:00:48', "nome" = 'tim' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/usuarios
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/usuarios/1]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 16:00:48) [GET]
+  [4;36;1mUsuario Load (0.7ms)[0m   [0;1mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/usuarios]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 16:01:04) [GET]
+  [4;35;1mUsuario Load (0.7ms)[0m   [0mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 66ms (View: 60, DB: 1) | 200 OK [http://localhost/usuarios]
+
+
+Processing UsuariosController#edit (for 127.0.0.1 at 2010-07-12 16:01:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) [0m
+Rendering template within layouts/usuarios
+Rendering usuarios/edit
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/usuarios/1/edit]
+
+
+Processing UsuariosController#update (for 127.0.0.1 at 2010-07-12 16:01:07) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"YxNaOhy0pLOHlDGUoxX+B97wdWLnSH+Ci3Fx9uwqeWA=", "id"=>"1", "usuario"=>{"salt"=>"21564509600.975732093782754", "senha_hashed"=>"6ac226391c056ae6799dcc09e80f45378b310af8", "nome"=>"tim"}}
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) [0m
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT "usuarios".id FROM "usuarios" WHERE ("usuarios"."nome" = 'tim' AND "usuarios".id <> 1) LIMIT 1[0m
+Redirected to http://localhost:3000/usuarios
+Completed in 13ms (DB: 1) | 302 Found [http://localhost/usuarios/1]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 16:01:07) [GET]
+  [4;35;1mUsuario Load (1.2ms)[0m   [0mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 17ms (View: 10, DB: 2) | 200 OK [http://localhost/usuarios]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 16:02:48) [GET]
+  [4;36;1mUsuario Load (0.7ms)[0m   [0;1mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 71ms (View: 64, DB: 1) | 200 OK [http://localhost/usuarios]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 16:02:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/depot.css" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 16:02:53) [GET]
+  [4;35;1mUsuario Load (0.7ms)[0m   [0mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 19ms (View: 12, DB: 1) | 200 OK [http://localhost/usuarios]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 19:02:21) [GET]
+
+ActionController::RoutingError (No route matches "/admin" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 19:02:29) [GET]
+
+ActionController::RoutingError (No route matches "/login" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 19:06:23) [GET]
+
+ActionController::RoutingError (No route matches "/admin" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 19:09:35) [GET]
+
+ActionController::RoutingError (No route matches "/admin" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-12 19:09:41) [GET]
+  [4;36;1mUsuario Load (0.9ms)[0m   [0;1mSELECT * FROM "usuarios" ORDER BY nome[0m
+Rendering template within layouts/usuarios
+Rendering usuarios/index
+Completed in 182ms (View: 39, DB: 24) | 200 OK [http://localhost/usuarios]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 19:09:51) [GET]
+
+ActionController::RoutingError (No route matches "/admin" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 19:11:47) [GET]
+
+ActionController::RoutingError (No route matches "/admin" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 19:11:52) [GET]
+
+ActionController::RoutingError (No route matches "/admin" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)

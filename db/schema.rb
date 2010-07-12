@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100702221645) do
+ActiveRecord::Schema.define(:version => 20100712175945) do
 
   create_table "pedido_items", :force => true do |t|
     t.integer  "id_produto",  :null => false
@@ -51,6 +51,14 @@ ActiveRecord::Schema.define(:version => 20100702221645) do
   create_table "tipo_de_pagamentos", :force => true do |t|
     t.text     "exibido"
     t.text     "registro"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "usuarios", :force => true do |t|
+    t.string   "nome"
+    t.string   "senha_hashed"
+    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

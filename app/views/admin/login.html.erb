@@ -1,0 +1,16 @@
+<h1>Log In Administrativo</h1>
+
+<% form_tag do %>
+
+  <p>
+    <%= f.label :nome, 'Nome' %><br />
+    <%= text_field_tag :nome, params[:nome] %>
+  </p>
+  <p>
+    <%= f.label :senha, 'Senha' %><br />
+    <%= password_field_tag :senha, params[:senha] %>
+  </p>
+  <p>
+    <%= f.submit 'Log in' %>
+  </p>
+<% end %>

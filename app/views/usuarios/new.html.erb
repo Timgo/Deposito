@@ -1,0 +1,23 @@
+<h1>Novo usuário</h1>
+
+<% form_for(@usuario) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome, :size => 40 %>
+  </p>
+  <p>
+    <%= f.label :senha_usuario, 'Senha' %><br />
+    <%= f.text_field :senha, :size => 40 %>
+  </p>
+  <p>
+    <%= f.label :confirmacao_senha_usuario, 'Confirmar' %><br />
+    <%= f.text_field :confirmacao_de_senha, :size => 40 %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', usuarios_path %>

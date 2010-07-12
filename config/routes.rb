@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :usuarios
+
   map.resources :item_pedidos
 
   map.resources :pedidos
