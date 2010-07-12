@@ -31578,3 +31578,145 @@ Rendering template within layouts/loja
 Rendering loja/index
 Rendered loja/_lista (3.9ms)
 Completed in 36ms (View: 28, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-08 15:30:21) [GET]
+  [4;36;1mProduto Load (35.9ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (19.8ms)
+Completed in 345ms (View: 188, DB: 36) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#adicionar_a_lista (for 127.0.0.1 at 2010-07-08 15:41:57) [POST]
+  Parameters: {"commit"=>"Adicionar à lista de compras", "authenticity_token"=>"7DrdrhfLBa5Rw3O9tK69++4AWI+SjZwSCWRZYi02t2I=", "id"=>"6", "_"=>""}
+  [4;35;1mProduto Load (0.3ms)[0m   [0mSELECT * FROM "produtos" WHERE ("produtos"."id" = 6) [0m
+Rendering loja/adicionar_a_lista
+Rendered loja/_lista_item (25.6ms)
+Rendered loja/_lista (93.6ms)
+Completed in 184ms (View: 115, DB: 1) | 200 OK [http://localhost/loja/adicionar_a_lista/6]
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-08 15:41:59) [POST]
+  Parameters: {"authenticity_token"=>"7DrdrhfLBa5Rw3O9tK69++4AWI+SjZwSCWRZYi02t2I="}
+  [4;36;1mTipoDePagamento Load (8.7ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "tipo_de_pagamentos" [0m
+
+NoMethodError (undefined method `lmap' for #<Array:0x10226f518>):
+  app/models/pedido.rb:11
+  app/controllers/loja_controller.rb:56:in `checkout'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.4ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-08 15:42:03) [GET]
+  [4;36;1mProduto Load (1.0ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista_item (1.9ms)
+Rendered loja/_lista (5.8ms)
+Completed in 99ms (View: 88, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#limpar_lista (for 127.0.0.1 at 2010-07-08 15:42:50) [POST]
+  Parameters: {"commit"=>"limpar tudo", "authenticity_token"=>"7DrdrhfLBa5Rw3O9tK69++4AWI+SjZwSCWRZYi02t2I=", "_"=>""}
+Rendering loja/limpar_lista
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://localhost/loja/limpar_lista]
+
+
+Processing LojaController#adicionar_a_lista (for 127.0.0.1 at 2010-07-08 15:42:54) [POST]
+  Parameters: {"commit"=>"Adicionar à lista de compras", "authenticity_token"=>"7DrdrhfLBa5Rw3O9tK69++4AWI+SjZwSCWRZYi02t2I=", "id"=>"6", "_"=>""}
+  [4;35;1mProduto Load (0.2ms)[0m   [0mSELECT * FROM "produtos" WHERE ("produtos"."id" = 6) [0m
+Rendering loja/adicionar_a_lista
+Rendered loja/_lista_item (4.8ms)
+Rendered loja/_lista (11.0ms)
+Completed in 24ms (View: 14, DB: 0) | 200 OK [http://localhost/loja/adicionar_a_lista/6]
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-12 14:33:50) [GET]
+  [4;36;1mProduto Load (20.9ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (20.5ms)
+Completed in 490ms (View: 245, DB: 21) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-12 14:35:53) [GET]
+  [4;35;1mProduto Load (1.0ms)[0m   [0mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (3.8ms)
+Completed in 37ms (View: 29, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#adicionar_a_lista (for 127.0.0.1 at 2010-07-12 14:35:56) [POST]
+  Parameters: {"commit"=>"Adicionar à lista de compras", "authenticity_token"=>"YxNaOhy0pLOHlDGUoxX+B97wdWLnSH+Ci3Fx9uwqeWA=", "id"=>"6", "_"=>""}
+  [4;36;1mProduto Load (0.3ms)[0m   [0;1mSELECT * FROM "produtos" WHERE ("produtos"."id" = 6) [0m
+Rendering loja/adicionar_a_lista
+Rendered loja/_lista_item (24.8ms)
+Rendered loja/_lista (35.2ms)
+Completed in 84ms (View: 56, DB: 0) | 200 OK [http://localhost/loja/adicionar_a_lista/6]
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-12 14:35:58) [POST]
+  Parameters: {"authenticity_token"=>"YxNaOhy0pLOHlDGUoxX+B97wdWLnSH+Ci3Fx9uwqeWA="}
+  [4;35;1mTipoDePagamento Load (0.5ms)[0m   [0mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+
+NoMethodError (undefined method `lmap' for #<Array:0x102050bd8>):
+  app/models/pedido.rb:11
+  app/controllers/loja_controller.rb:56:in `checkout'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#checkout (for 127.0.0.1 at 2010-07-12 14:36:34) [POST]
+  Parameters: {"authenticity_token"=>"YxNaOhy0pLOHlDGUoxX+B97wdWLnSH+Ci3Fx9uwqeWA="}
+  [4;35;1mTipoDePagamento Load (0.4ms)[0m   [0mSELECT * FROM "tipo_de_pagamentos" [0m
+Rendering template within layouts/loja
+Rendering loja/checkout
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+Rendered loja/_lista_item (4.1ms)
+Rendered loja/_lista (9.0ms)
+Completed in 59ms (View: 41, DB: 1) | 200 OK [http://localhost/loja/checkout]
+
+
+Processing LojaController#salvar_pedido (for 127.0.0.1 at 2010-07-12 14:36:57) [POST]
+  Parameters: {"commit"=>"Enviar o pedido", "authenticity_token"=>"YxNaOhy0pLOHlDGUoxX+B97wdWLnSH+Ci3Fx9uwqeWA=", "pedido"=>{"endereco"=>"Vargem Grande, Bem Grande", "nome"=>"Arthur Amiune", "tipo_de_pagamento"=>"banco", "email"=>"arthur@amiune.com"}}
+  [4;35;1mTipoDePagamento Load (0.4ms)[0m   [0mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;36;1mPedido Create (0.4ms)[0m   [0;1mINSERT INTO "pedidos" ("endereco", "created_at", "nome", "updated_at", "tipo_de_pagamento", "email") VALUES('Vargem Grande, Bem Grande', '2010-07-12 17:36:57', 'Arthur Amiune', '2010-07-12 17:36:57', 'banco', 'arthur@amiune.com')[0m
+  [4;35;1mPedidoItem Create (0.2ms)[0m   [0mINSERT INTO "pedido_items" ("id_pedido", "preco_total", "created_at", "updated_at", "quantidade", "id_produto") VALUES(2163969360, 15.0, '2010-07-12 17:36:57', '2010-07-12 17:36:57', 1, 6)[0m
+Redirected to http://localhost:3000/loja
+Completed in 77ms (DB: 2) | 302 Found [http://localhost/loja/salvar_pedido]
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-12 14:36:57) [GET]
+  [4;36;1mProduto Load (1.0ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (3.5ms)
+Completed in 37ms (View: 28, DB: 1) | 200 OK [http://localhost/loja]
