@@ -69,7 +69,6 @@ class LojaController < ApplicationController
     end
   end
   
-  
 private
 
   def encaminhar_index(msg = nil)
@@ -80,5 +79,11 @@ private
   def encontrar_lista
     session[:lista] ||= Lista.new
   end
-  
+
+
+protected
+
+def autorizar
+end
+
 end

@@ -32204,3 +32204,1104 @@ ActionController::RoutingError (No route matches "/admin" with {:method=>:get}):
   /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-14 16:15:38) [GET]
+  [4;36;1mProduto Load (50.7ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (42.0ms)
+Completed in 803ms (View: 479, DB: 51) | 200 OK [http://localhost/loja]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 16:19:11) [GET]
+Rendering admin/login
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x101576960>) on line #6 of app/views/admin/login.html.erb:
+3: <% form_tag do %>
+4: 
+5:   <p>
+6:     <%= f.label :nome, 'Nome' %><br />
+7:     <%= text_field_tag :nome, params[:nome] %>
+8:   </p>
+9:   <p>
+
+    app/views/admin/login.html.erb:6
+    app/views/admin/login.html.erb:3
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.9ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 16:22:16) [GET]
+Rendering admin/login
+Completed in 11ms (View: 8, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 16:23:12) [GET]
+Rendering admin/login
+Completed in 11ms (View: 9, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 16:25:19) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"tim", "authenticity_token"=>"6lBv8qDS6/nx6FG2YM96SiDoXfvphySrDMGDvxmOLYE=", "senha"=>"123"}
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `find_by_name' for #<Class:0x10244c840>):
+  app/models/usuario.rb:14:in `autenticar'
+  app/controllers/admin_controller.rb:4:in `login'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 16:26:54) [GET]
+  [4;36;1mTipoDePagamento Load (1.0ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+Completed in 61ms (View: 20, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 16:27:44) [GET]
+  [4;36;1mTipoDePagamento Load (0.8ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+ERROR: compiling _run_erb_app47views47admin47index46html46erb RAISED compile error
+/Users/tim/Documents/Developer/deposito/app/views/admin/index.html.erb:4: syntax error, unexpected kENSURE, expecting ')'
+/Users/tim/Documents/Developer/deposito/app/views/admin/index.html.erb:6: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47admin47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Bem-vindo "; @output_buffer.concat((#{@usuario}).to_s); @output_buffer.concat "</h1>\n<p>N\303\263s temos "
+; @output_buffer.concat(( pluralize(@pedidos_total, "pedidos")).to_s); @output_buffer.concat "</p>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/tim/Documents/Developer/deposito/app/views/admin/index.html.erb:6:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/abstract_store.rb:122:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/tim/Documents/Developer/deposito/app/views/admin/index.html.erb:4: syntax error, unexpected kENSURE, expecting ')'
+/Users/tim/Documents/Developer/deposito/app/views/admin/index.html.erb:6: syntax error, unexpected kEND, expecting ')') on line #4 of app/views/admin/index.html.erb:
+1: <h1>Bem-vindo <%=#{@usuario}%></h1>
+2: <p>Nós temos <%= pluralize(@pedidos_total, "pedidos")%></p>
+
+    app/views/admin/index.html.erb:6:in `compile!'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 16:28:03) [GET]
+  [4;36;1mTipoDePagamento Load (0.8ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 16:28:11) [GET]
+  [4;36;1mTipoDePagamento Load (0.8ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 16:28:45) [GET]
+  [4;36;1mTipoDePagamento Load (0.8ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+Completed in 69ms (View: 4, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 16:29:06) [GET]
+  [4;36;1mTipoDePagamento Load (0.8ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+Completed in 14ms (View: 4, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 16:29:22) [GET]
+  [4;36;1mTipoDePagamento Load (0.8ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 16:29:41) [GET]
+  [4;36;1mTipoDePagamento Load (0.8ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+ERROR: compiling _run_erb_app47views47admin47index46html46erb RAISED compile error
+/Users/tim/Documents/Developer/deposito/app/views/admin/index.html.erb:1: syntax error, unexpected kELSE, expecting ')'
+...@usuario if @usuario.nil? else "usuário" ).to_s); @output_b...
+                              ^
+Function body:           def _run_erb_app47views47admin47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Bem-vindo "; @output_buffer.concat(( @usuario if @usuario.nil? else "usuário" ).to_s); @output_buffer.concat "</h1>\n<p>N\303\263s temos "
+; @output_buffer.concat(( pluralize(@pedidos_total, "pedidos")).to_s); @output_buffer.concat "</p>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/tim/Documents/Developer/deposito/app/views/admin/index.html.erb:6:in `compile!'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/opt/local/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/abstract_store.rb:122:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/tim/Documents/Developer/deposito/app/views/admin/index.html.erb:1: syntax error, unexpected kELSE, expecting ')'
+...@usuario if @usuario.nil? else "usuário" ).to_s); @output_b...
+                              ^) on line #1 of app/views/admin/index.html.erb:
+1: <h1>Bem-vindo <%= @usuario if @usuario.nil? else "usuário" %></h1>
+2: <p>Nós temos <%= pluralize(@pedidos_total, "pedidos")%></p>
+
+    app/views/admin/index.html.erb:6:in `compile!'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (95.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 16:30:16) [GET]
+  [4;36;1mTipoDePagamento Load (0.8ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+Completed in 14ms (View: 5, DB: 1) | 200 OK [http://localhost/admin]
+  [4;36;1mSQL (3.8ms)[0m   [0;1mDELETE FROM sessions[0m
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-14 16:49:37) [GET]
+
+ActionController::RoutingError (No route matches "/produto" with {:method=>:get}):
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-14 16:49:43) [GET]
+
+NameError (undefined local variable or method `protected' for main:Object):
+  app/controllers/application_controller.rb:13
+  app/controllers/produtos_controller.rb:1
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (91.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-14 16:50:13) [GET]
+
+NameError (undefined local variable or method `protected' for main:Object):
+  app/controllers/application_controller.rb:13
+  app/controllers/produtos_controller.rb:1
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-14 16:50:21) [GET]
+
+NameError (undefined local variable or method `protected' for main:Object):
+  app/controllers/application_controller.rb:13
+  app/controllers/produtos_controller.rb:1
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (91.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-14 16:52:03) [GET]
+
+NameError (undefined local variable or method `protected' for main:Object):
+  app/controllers/application_controller.rb:13
+  app/controllers/produtos_controller.rb:1
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-14 16:52:04) [GET]
+
+NameError (undefined local variable or method `protected' for main:Object):
+  app/controllers/application_controller.rb:13
+  app/controllers/produtos_controller.rb:1
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (91.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-14 16:52:05) [GET]
+
+NameError (undefined local variable or method `protected' for main:Object):
+  app/controllers/application_controller.rb:13
+  app/controllers/produtos_controller.rb:1
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-14 16:52:06) [GET]
+
+NameError (undefined local variable or method `protected' for main:Object):
+  app/controllers/application_controller.rb:13
+  app/controllers/produtos_controller.rb:1
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (90.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-14 16:52:16) [GET]
+
+NameError (undefined local variable or method `protected' for main:Object):
+  app/controllers/application_controller.rb:13
+  app/controllers/loja_controller.rb:1
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-14 16:52:24) [GET]
+
+NameError (undefined local variable or method `protected' for main:Object):
+  app/controllers/application_controller.rb:13
+  app/controllers/loja_controller.rb:1
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-14 16:53:03) [GET]
+  [4;36;1mProduto Load (1.0ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (3.3ms)
+Completed in 35ms (View: 26, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 16:53:09) [GET]
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [:autorizar] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/produtos]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 16:53:09) [GET]
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-14 17:06:01) [GET]
+  [4;36;1mProduto Load (1.0ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (3.2ms)
+Completed in 35ms (View: 26, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-14 17:06:03) [GET]
+  [4;35;1mProduto Load (1.0ms)[0m   [0mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (3.4ms)
+Completed in 86ms (View: 77, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 17:06:16) [GET]
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+
+NameError (undefined local variable or method `original_uri' for #<ProdutosController:0x1021c6710>):
+  app/controllers/application_controller.rb:15:in `autorizar'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 17:12:15) [GET]
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+
+NameError (undefined local variable or method `original_url' for #<ProdutosController:0x10113d9e8>):
+  app/controllers/application_controller.rb:15:in `autorizar'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 17:14:08) [GET]
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+
+NameError (undefined local variable or method `original_url' for #<ProdutosController:0x10204e630>):
+  app/controllers/application_controller.rb:15:in `autorizar'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 17:14:40) [GET]
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+
+NameError (undefined local variable or method `original_url' for #<ProdutosController:0x102545260>):
+  app/controllers/application_controller.rb:15:in `autorizar'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 17:15:16) [GET]
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+
+NoMethodError (undefined method `request_url' for #<ActionController::Request:0x101f49730>):
+  app/controllers/application_controller.rb:15:in `autorizar'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (88.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 17:15:34) [GET]
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [:autorizar] rendered_or_redirected.
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/produtos]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:15:34) [GET]
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:16:11) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>"123"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `find_by_name' for #<Class:0x101f69558>):
+  app/models/usuario.rb:14:in `autenticar'
+  app/controllers/admin_controller.rb:4:in `login'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:17:22) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>"123"}
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:17:27) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>"123"}
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 13ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 17:17:37) [GET]
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [:autorizar] rendered_or_redirected.
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/produtos]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:17:37) [GET]
+Rendering admin/login
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:17:45) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>"123"}
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 62ms (View: 51, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:18:19) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:18:20) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:18:21) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing UsuariosController#index (for 127.0.0.1 at 2010-07-14 17:46:26) [GET]
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [:autorizar] rendered_or_redirected.
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/usuarios]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:46:26) [GET]
+Rendering admin/login
+Completed in 55ms (View: 53, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:46:46) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:48:37) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"joao", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:49:37) [POST]
+  Parameters: {"commit"=>"Log in", "nome"=>"joao", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 31ms (View: 21, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:49:39) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"joao", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:50:21) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"joao", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:50:25) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"oi", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:51:52) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"oi", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:51:56) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>""}
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 12ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:52:14) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>"123"}
+  [4;35;1mUsuario Load (0.2ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" IS NULL) LIMIT 1[0m
+Rendering admin/login
+Completed in 62ms (View: 51, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:53:07) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>"123"}
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" = 'tim') LIMIT 1[0m
+
+NameError (undefined local variable or method `uri' for #<AdminController:0x102483408>):
+  app/controllers/admin_controller.rb:9:in `login'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:53:19) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"+4IXEveWHgWWuvxiN6xnHbdStPldAGoBzx1ddHvobus=", "senha"=>"123"}
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" = 'tim') LIMIT 1[0m
+
+NameError (undefined local variable or method `uri' for #<AdminController:0x101f0c420>):
+  app/controllers/admin_controller.rb:9:in `login'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (86.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-14 17:53:37) [GET]
+  [4;36;1mProduto Load (1.2ms)[0m   [0;1mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (3.9ms)
+Completed in 111ms (View: 79, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing LojaController#index (for 127.0.0.1 at 2010-07-14 17:53:38) [GET]
+  [4;35;1mProduto Load (1.0ms)[0m   [0mSELECT * FROM "produtos" ORDER BY title[0m
+Rendering template within layouts/loja
+Rendering loja/index
+Rendered loja/_lista (3.4ms)
+Completed in 36ms (View: 27, DB: 1) | 200 OK [http://localhost/loja]
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 17:53:46) [GET]
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+  [4;35;1mProduto Load (0.6ms)[0m   [0mSELECT * FROM "produtos" [0m
+Rendering template within layouts/produtos
+Rendering produtos/index
+Completed in 85ms (View: 71, DB: 2) | 200 OK [http://localhost/produtos]
+  [4;36;1mSQL (3.5ms)[0m   [0;1mDELETE FROM sessions[0m
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 17:54:56) [GET]
+  [4;36;1mUsuario Load (0.1ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [:autorizar] rendered_or_redirected.
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/produtos]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:54:56) [GET]
+Rendering admin/login
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:54:59) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"BzMgYrE9pPzrDtdrJGIchDTGcUOn7S/DkWiSH06oXQU=", "senha"=>""}
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" = 'tim') LIMIT 1[0m
+Rendering admin/login
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:56:47) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"BzMgYrE9pPzrDtdrJGIchDTGcUOn7S/DkWiSH06oXQU=", "senha"=>""}
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" = 'tim') LIMIT 1[0m
+Rendering admin/login
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:56:52) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"BzMgYrE9pPzrDtdrJGIchDTGcUOn7S/DkWiSH06oXQU=", "senha"=>"123"}
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" = 'tim') LIMIT 1[0m
+
+NameError (undefined local variable or method `uri' for #<AdminController:0x1020ec0b0>):
+  app/controllers/admin_controller.rb:9:in `login'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:56:58) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"BzMgYrE9pPzrDtdrJGIchDTGcUOn7S/DkWiSH06oXQU=", "senha"=>"123"}
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" = 'tim') LIMIT 1[0m
+
+NameError (undefined local variable or method `uri' for #<AdminController:0x1025c7be8>):
+  app/controllers/admin_controller.rb:9:in `login'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (2.7ms)[0m   [0;1mDELETE FROM sessions[0m
+
+
+Processing ProdutosController#index (for 127.0.0.1 at 2010-07-14 17:57:49) [GET]
+  [4;35;1mUsuario Load (0.1ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as [:autorizar] rendered_or_redirected.
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/produtos]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:57:49) [GET]
+Rendering admin/login
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/admin/login]
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:57:54) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"GRMix5NKIs3VAt9gBtwmc47Y4mSsz6mr9gZ2Reb8MRA=", "senha"=>"123"}
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" = 'tim') LIMIT 1[0m
+
+NameError (undefined local variable or method `uri' for #<AdminController:0x101542c78>):
+  app/controllers/admin_controller.rb:9:in `login'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:58:26) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"GRMix5NKIs3VAt9gBtwmc47Y4mSsz6mr9gZ2Reb8MRA=", "senha"=>"123"}
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" = 'tim') LIMIT 1[0m
+
+NoMethodError (undefined method `redirecto_to' for #<AdminController:0x1020fcb40>):
+  app/controllers/admin_controller.rb:9:in `login'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:58:35) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"GRMix5NKIs3VAt9gBtwmc47Y4mSsz6mr9gZ2Reb8MRA=", "senha"=>"123"}
+  [4;36;1mUsuario Load (0.3ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" = 'tim') LIMIT 1[0m
+
+NoMethodError (undefined method `redirec_to' for #<AdminController:0x1025ea710>):
+  app/controllers/admin_controller.rb:9:in `login'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#login (for 127.0.0.1 at 2010-07-14 17:58:43) [POST]
+  Parameters: {"commit"=>"Login", "nome"=>"tim", "authenticity_token"=>"GRMix5NKIs3VAt9gBtwmc47Y4mSsz6mr9gZ2Reb8MRA=", "senha"=>"123"}
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."nome" = 'tim') LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/admin/login]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 17:58:44) [GET]
+  [4;36;1mUsuario Load (0.2ms)[0m   [0;1mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+  [4;35;1mTipoDePagamento Load (0.6ms)[0m   [0mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+Completed in 57ms (View: 1, DB: 2) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for 127.0.0.1 at 2010-07-14 18:02:27) [GET]
+  [4;35;1mUsuario Load (0.3ms)[0m   [0mSELECT * FROM "usuarios" WHERE ("usuarios"."id" = 1) LIMIT 1[0m
+  [4;36;1mTipoDePagamento Load (0.5ms)[0m   [0;1mSELECT * FROM "tipo_de_pagamentos" [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pedidos" [0m
+Rendering admin/index
+Completed in 181ms (View: 5, DB: 23) | 200 OK [http://localhost/admin]

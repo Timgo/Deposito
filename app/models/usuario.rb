@@ -1,4 +1,4 @@
-  require 'digest/sha1'
+require 'digest/sha1'
 
 class Usuario < ActiveRecord::Base
   
@@ -11,7 +11,7 @@ class Usuario < ActiveRecord::Base
   validate :senha_nao_branco
   
   def self.autenticar(nome, senha)
-    usuario = self.find_by_name(nome)
+    usuario = self.find_by_nome(nome)
     if usuario
       senha_esperada = senha_encryptada(senha, usuario.salt)
       if usuario.senha_hashed != senha_esperada
