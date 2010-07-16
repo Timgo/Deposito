@@ -32,6 +32,13 @@ class Usuario < ActiveRecord::Base
     criar_novo_salt
     self.senha_hashed = Usuario.senha_encryptada(self.senha, self.salt)
   end
+  
+  def after_destroy
+    if Usuario.count.zero?
+      raise "Último usuário não pode ser apagado"
+    end
+  end
+    
     
   private
   

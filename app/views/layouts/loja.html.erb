@@ -16,17 +16,30 @@
 <div id="columns">	
  <div id="side"> 
 	
-	<%=  Time.now.to_s(:short) %><br/>
+	<% if @lista %>
 	
-	<% esconder_div_if(@lista.items.empty?, :id => "lista") do %>
+		<%=  Time.now.to_s(:short) %><br/>
+	
+		<% esconder_div_if(@lista.items.empty?, :id => "lista") do %>
 		<%= render(:partial => "lista", :object => @lista) %>
+		<% end %>
+	
 	<% end %>
 	
-	
-	<a href="http://www....">Home</a><br /> 
+	<%= link_to 'Home', :controller => 'loja', :action => 'index' %><br /> 
 	<a href="http://www..../faq">Questions</a><br /> 
 	<a href="http://www..../news">News</a><br /> 
 	<a href="http://www..../contact">Contact</a><br />
+	
+	<% if session[:usuario_id] %>
+		<br />
+		<%= link_to 'Pedidos', :controller => 'pedidos' %><br />
+		<%= link_to 'Produtos', :controller => 'produtos' %><br />
+		<%= link_to 'Usuários', :controller => 'usuarios' %><br />
+		<br />
+		<%= link_to 'Log out', :controller => 'admin', :action => 'logout' %>
+	<% end %>
+	
  </div> 
 
 <div id="main">

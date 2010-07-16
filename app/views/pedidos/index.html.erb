@@ -1,4 +1,4 @@
-<h1>Listing pedidos</h1>
+<h1>Lista de Pedidos</h1>
 
 <table>
   <tr>
@@ -11,16 +11,16 @@
 <% @pedidos.each do |pedido| %>
   <tr>
     <td><%=h pedido.nome %></td>
-    <td><%=h pedido.endereço %></td>
+    <td><%=h pedido.endereco %></td>
     <td><%=h pedido.email %></td>
     <td><%=h pedido.tipo_de_pagamento %></td>
-    <td><%= link_to 'Show', pedido %></td>
-    <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>
-    <td><%= link_to 'Destroy', pedido, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Mostrar', pedido %></td>
+    <td><%= link_to 'Editar', edit_pedido_path(pedido) %></td>
+    <td><%= link_to 'Cancelar', pedido, :confirm => 'Tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New pedido', new_pedido_path %>
+<%= link_to 'Novo pedido', new_pedido_path %>

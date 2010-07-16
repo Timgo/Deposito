@@ -6,7 +6,7 @@
 	<td class="coluninha"><%= lista_item.quantidade %>&times; <%=h lista_item.title %></td>
 	<td>
 		<% form_remote_tag :url => { :action => 'limpar_item', :id => lista_item.produto } do %>
-		<%= submit_tag "-" %>
+		<%= submit_tag "-" if @pedido.nil? %>
 		<% end %>
 	</td>
 </tr>

@@ -12,7 +12,7 @@
 	</tr>
 	<tr>
 	<td class="coluninha">
-	<%= button_to "Checkout", :action => 'checkout' if @pedido.nil? %>
+	<%= button_to "Checkout", {:action => :checkout}, {:method => :get} if @pedido.nil?%>
 	</td>
 	<!--td>
 		<%= button_to "Checkout", :action => 'checkout' %>

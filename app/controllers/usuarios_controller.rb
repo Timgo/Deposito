@@ -75,7 +75,12 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1.xml
   def destroy
     @usuario = Usuario.find(params[:id])
-    @usuario.destroy
+    begin
+      flash[:notice] = "Usuário #{@usuario.nome} apagado"
+      @usuario.destroy
+    rescue Exception => e
+      flash[:notice] = e.message
+    end
 
     respond_to do |format|
       format.html { redirect_to(usuarios_url) }

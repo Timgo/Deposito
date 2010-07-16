@@ -14,6 +14,9 @@ class AdminController < ApplicationController
   end
 
   def logout
+    session[:usuario_id] = nil
+    flash[:notice] = 'Log out realizado com sucesso'
+    redirect_to(:controller => 'loja', :action =>'index')
   end
 
   def index

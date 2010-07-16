@@ -1,4 +1,5 @@
 class LojaController < ApplicationController
+  before_filter :encontrar_lista, :except => :limpar_lista
   
   def index
     @produtos = Produto.encontrar_produtos_a_venda
@@ -48,24 +49,43 @@ class LojaController < ApplicationController
       encaminhar_index('Produto Inválido')
   end
   
+#  def checkout
+ #   @lista = encontrar_lista
+  #  if @lista.items.empty?
+   #   encaminhar_index("Não há nenhum produto na sua lista de compras")
+    #else
+     # @pedido = Pedido.new
+    #end
+  #end
+  
+  #def salvar_pedido
+   # @lista = encontrar_lista
+  #  @pedido = Pedido.new(params[:pedido])
+   # @pedido.adicionar_pedido_items_da_lista(@lista)
+  #  if @pedido.save
+   #   session[:lista] = nil
+    #  encaminhar_index("Pedido enviado com sucesso!")
+    #else
+     # render :action => 'checkout'
+    #end
+  #end
+  
   def checkout
     @lista = encontrar_lista
-    if @lista.items.empty?
-      encaminhar_index("Não há nenhum produto na sua lista de compras")
-    else
+    encaminhar_index("Não há nenhum produto na sua lista de compras") if @lista.items.empty?
+    if request.get?
       @pedido = Pedido.new
-    end
-  end
-  
-  def salvar_pedido
-    @lista = encontrar_lista
-    @pedido = Pedido.new(params[:pedido])
-    @pedido.adicionar_pedido_items_da_lista(@lista)
-    if @pedido.save
-      session[:lista] = nil
-      encaminhar_index("Pedido enviado com sucesso!")
     else
-      render :action => 'checkout'
+      @pedido = Pedido.new(params[:pedido])
+      @pedido.adicionar_pedido_items_da_lista(@lista)
+      if @pedido.save 
+        session[:lista] = nil
+        encaminhar_index('Pedido enviado com sucesso!')
+      #else
+        #@pedido
+        #render :action => 'checkout'
+        #encaminhar_index("Não há nenhum produto na sua lista de compras")
+      end
     end
   end
   
@@ -77,7 +97,7 @@ private
   end
   
   def encontrar_lista
-    session[:lista] ||= Lista.new
+    @lista = (session[:lista] ||= Lista.new)
   end
 
 
