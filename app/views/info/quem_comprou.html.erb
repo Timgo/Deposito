@@ -1,0 +1,9 @@
+<h1>Pessoas que compraram <%= @produto.title %></h1>
+
+<ul>
+	<% for pedido in @pedidos -%>
+	<li>
+		<%= mail_to pedido.email, pedido.nome %>
+	</li>
+	<% end %>
+</ul>

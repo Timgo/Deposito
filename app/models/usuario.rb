@@ -1,3 +1,16 @@
+# == Schema Information
+# Schema version: 20100712175945
+#
+# Table name: usuarios
+#
+#  id           :integer         not null, primary key
+#  nome         :string(255)
+#  senha_hashed :string(255)
+#  salt         :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 require 'digest/sha1'
 
 class Usuario < ActiveRecord::Base

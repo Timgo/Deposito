@@ -1,4 +1,19 @@
+# == Schema Information
+# Schema version: 20100712175945
+#
+# Table name: produtos
+#
+#  id          :integer         not null, primary key
+#  title       :string(255)
+#  description :text
+#  image_url   :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  price       :decimal(8, 2)   default(0.0)
+#
+
 class Produto < ActiveRecord::Base
+  has_many :pedidos, :through => :pedido_items
   has_many :pedido_items
   
   def self.encontrar_produtos_a_venda

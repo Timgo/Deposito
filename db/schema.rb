@@ -9,11 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100712175945) do
+ActiveRecord::Schema.define(:version => 20100719152803) do
 
   create_table "pedido_items", :force => true do |t|
-    t.integer  "id_produto",  :null => false
-    t.integer  "id_pedido",   :null => false
+    t.integer  "produto_id",  :null => false
+    t.integer  "pedido_id",   :null => false
     t.integer  "quantidade",  :null => false
     t.decimal  "preco_total", :null => false
     t.datetime "created_at"

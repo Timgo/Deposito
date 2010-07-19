@@ -8,4 +8,10 @@ como funciona o método "each"? por que tem um "do"? por que esses "|xxxx|"? Ex.
 
 por que eu preciso criar a ligação "has many" ou "belongs to"? qual é o benefício? qual o prejuízo se eu não fizer?
 
-teste do
+como é que funcionam esse "do"?
+ex1.
+respond_to do |format|
+format.xml { render :layout => false }
+end
+
+ex2.<% form_for :pedido, :url => { :action => :checkout } do |form| %>
